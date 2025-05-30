@@ -28,15 +28,18 @@ public class Aluno extends Usuario {
   }
 
   @Override
-  public void adicionarLivro(Livro livro) {
+  public boolean adicionarLivro(Livro livro) {
     int creditosAposEmprestimo = creditos - livro.getValorCredito(); // verifica os creditos no possivel emprestimo
     if(creditosAposEmprestimo >= 0 ){ // se ficar maior do que ou igual a 0 empresta
       System.out.println("Livro "+ livro.getTitulo() +" pego emprestado com sucesso");
       super.adicionarLivro(livro);
       this.creditos = creditosAposEmprestimo; // atualiza os creditos
+      return true;
     }else{ // caso nao de apenas imprime a mensagem
       System.out.println("Sem créditos para pegar emprestado este livro");
+     return false;
     }
+    
 }
  
 }

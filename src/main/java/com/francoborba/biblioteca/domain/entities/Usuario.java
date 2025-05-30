@@ -62,8 +62,9 @@ public abstract class Usuario {
 * Parametros: Livro a ser adicionado
 * Retorno: void
 *************************************************************** */
-public void adicionarLivro(Livro livro) {
-    this.livrosEmprestados.add(livro);
+public boolean adicionarLivro(Livro livro) {
+   return this.livrosEmprestados.add(livro);
+
 }
 
  /* ***************************************************************
