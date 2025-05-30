@@ -17,8 +17,8 @@ public class EmprestarLivroUseCase {
     this.livroRepository = livroRepository;
     this.usuarioRepository = usuarioRepository;  
   }
-   public void executar(int idUsuario, int idLivro) {
-        // 1. Buscar o usuário e o livro
+   public void emprestar(int idUsuario, int idLivro) {
+        //  Buscar o usuario e o livro
         Usuario usuario = usuarioRepository.buscarPorId(idUsuario);
         Livro livro = livroRepository.buscarPorId(idLivro);
 
@@ -27,10 +27,17 @@ public class EmprestarLivroUseCase {
             return;
         }
 
+        // Listar os livros antes , listando todos os livros e somente os disponiveis
+        System.out.println("Livros da biblioteca: "+ livroRepository.listarTodos());
+        System.out.println("Livros disponives: " + livroRepository.listarDisponiveis());
+
+
         if (livro == null) {
             System.out.println("Livro não encontrado.");
             return;
         }
+
+        
 
         //  Verificar se o livro esta disponível
         if (!livro.estaDisponivel()) {
@@ -48,8 +55,8 @@ public class EmprestarLivroUseCase {
         //  Realizar o empreestimo
      boolean emprestimoRealizado =  usuario.adicionarLivro(livro); // Aqui dentro faz a verificacao dos creditos e atualizacao
 
-    if (!emprestimoRealizado) {
-      // A mensagem de erro já é impressa dentro de `adicionarLivro`, então só encerramos aqui
+    if (!emprestimoRealizado) { // se falhar
+      // A mensagem de erro ja e impressa dentro de adicionarLivro, entao so encerramos aqui
       return;
     }
 

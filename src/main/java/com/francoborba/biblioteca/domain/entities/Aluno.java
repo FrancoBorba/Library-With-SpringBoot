@@ -41,5 +41,13 @@ public class Aluno extends Usuario {
     }
     
 }
+
+ @Override 
+ public void removerLivro(Livro livro){
+  int creditosAntesDoEmprestimo = creditos;
+  super.removerLivro(livro);
+  this.creditos = creditosAntesDoEmprestimo + livro.getValorCredito();
+  System.out.println("Livro devolvido com sucesso , créditos atualizados para: " + creditos );
+ }
  
 }
