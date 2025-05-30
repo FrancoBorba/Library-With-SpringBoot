@@ -77,5 +77,33 @@ public class Livro {
     return emprestadoPara;
   }
 
+  
+   /* ***************************************************************
+* Metodo: emprestarPara
+* Funcao: Emprestar o livro para o usuario caso disponivel
+* Parametros: Usuario que deseja o livro
+* Retorno: void
+*************************************************************** */
+  public void emprestarPara(Usuario usuario){
+    if(!disponivel){ // verifica disponibilidade
+      System.out.println("Livro " + titulo + " está indisponivel ");
+    }
+    this.emprestadoPara = usuario; // Adiciona o usario que esta com o livro
+    this.disponivel = false; // Muda a disponibilidade para falso
+  }
+
+
+    
+   /* ***************************************************************
+* Metodo: devolver
+* Funcao: Definir o livro como disponivel de novo
+* Parametros: void
+* Retorno: void
+*************************************************************** */
+  public void devolver(){
+    System.out.println("Livro " + titulo + " devolvido");
+    this.disponivel = true;
+  }
+
 
 }

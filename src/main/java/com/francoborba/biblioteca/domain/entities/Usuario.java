@@ -7,14 +7,20 @@
 *************************************************************** */
 package com.francoborba.biblioteca.domain.entities;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public abstract class Usuario {
   private int id;
   private String nome;
+
+  private ArrayList<Livro> livrosEmprestados;
   
 
   public Usuario(int id, String nome) {
     this.id = id;
     this.nome = nome;
+    livrosEmprestados = new ArrayList<>();
   }
 
 
@@ -37,6 +43,40 @@ public abstract class Usuario {
   public String getNome() {
     return nome;
   }
+
+
+
+   /* ***************************************************************
+* Metodo: getLivros
+* Funcao: Retornar todos os livros que o usuario tem emprestado
+* Parametros: void
+* Retorno: List<Livro>
+*************************************************************** */
+ public List<Livro> getLivros() {
+    return new ArrayList<>(livrosEmprestados);
+}
+
+ /* ***************************************************************
+* Metodo: adicionarLivro
+* Funcao: adicionar um livro da lista de livros ou seja pegar um livro emprestado
+* Parametros: Livro a ser adicionado
+* Retorno: void
+*************************************************************** */
+public void adicionarLivro(Livro livro) {
+    this.livrosEmprestados.add(livro);
+}
+
+ /* ***************************************************************
+* Metodo: removerLivro
+* Funcao: remover um livro da lista de livros
+* Parametros: Livro a ser removido
+* Retorno: void
+*************************************************************** */
+public void removerLivro(Livro livro) {
+    this.livrosEmprestados.remove(livro);
+}
+
+  
 
 
 }
