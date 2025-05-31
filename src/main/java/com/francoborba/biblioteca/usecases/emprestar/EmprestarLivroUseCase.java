@@ -35,7 +35,7 @@ public class EmprestarLivroUseCase {
    public void emprestar(int idUsuario, int idLivro) {
         //  Buscar o usuario e o livro
         Usuario usuario = usuarioRepository.buscarPorId(idUsuario);
-        Livro livro = livroRepository.buscarPorId(idLivro);
+     
 
         if (usuario == null) {
             System.out.println("Usuário não encontrado.");
@@ -46,7 +46,7 @@ public class EmprestarLivroUseCase {
         System.out.println("Livros da biblioteca: "+ livroRepository.listarTodos());
         System.out.println("Livros disponives: " + livroRepository.listarDisponiveis());
 
-
+   Livro livro = livroRepository.buscarPorId(idLivro); // corrigindo pois nao tinha passado no teste
         if (livro == null) {
             System.out.println("Livro não encontrado.");
             return;

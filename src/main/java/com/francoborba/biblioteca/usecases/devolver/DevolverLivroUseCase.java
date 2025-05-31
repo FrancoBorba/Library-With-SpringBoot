@@ -32,7 +32,7 @@ public class DevolverLivroUseCase {
   public void devolver(int idUsuario , int idLivro){
     // Buscar o usuario e o livro
     Usuario usuario = usuarioRepository.buscarPorId(idUsuario);
-    Livro livro = livroRepository.buscarPorId(idLivro);
+    
 
     // verificar se o usuario existe
     if (usuario == null) {
@@ -40,6 +40,7 @@ public class DevolverLivroUseCase {
       return;
     }
 
+  Livro livro = livroRepository.buscarPorId(idLivro); // so busca depois (identifiquei no teste)
     // Verificar se o livro existe
     if(livro == null){
       System.out.println("Este livro não pertence a esta biblioteca");
