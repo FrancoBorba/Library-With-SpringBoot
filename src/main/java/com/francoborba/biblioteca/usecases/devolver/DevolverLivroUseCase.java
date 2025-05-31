@@ -47,6 +47,12 @@ public class DevolverLivroUseCase {
       return ;
     }
 
+      // Verificar se o usuario possui o livro
+    if (!usuario.getLivros().contains(livro)) {
+        System.out.println("Este usuário não possui este livro.");
+        return;
+    }
+
     // listar todos os livros disponiveis antes da devolucao
     System.out.println("Livros disponiveis antes da devolução: " + livroRepository.listarDisponiveis());
 
