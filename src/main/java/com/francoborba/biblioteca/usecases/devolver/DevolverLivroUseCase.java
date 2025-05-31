@@ -1,3 +1,10 @@
+/* ***************************************************************
+* Autor............: Franco Ribeiro Borba
+* Inicio...........: 30/05/2025
+* Ultima alteracao.: 30/05/2025
+* Nome.............: DevolverLivroUseCase
+* Funcao...........: Devolver o livro para a biblioteca com todas as regras de negocio
+*************************************************************** */
 package com.francoborba.biblioteca.usecases.devolver;
 
 import com.francoborba.biblioteca.domain.entities.Livro;
@@ -16,6 +23,12 @@ public class DevolverLivroUseCase {
     this.usuarioRepository = usuarioRepository;  
   }
 
+ /* ***************************************************************
+* Metodo: devolver
+* Funcao: devolver um Livro a biblioteca com todas as regras de negocio e validacoes
+* Parametros: id do usuario que vai remover e id do livro a ser removido
+* Retorno: void
+*************************************************************** */
   public void devolver(int idUsuario , int idLivro){
     // Buscar o usuario e o livro
     Usuario usuario = usuarioRepository.buscarPorId(idUsuario);

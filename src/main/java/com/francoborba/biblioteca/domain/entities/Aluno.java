@@ -27,6 +27,12 @@ public class Aluno extends Usuario {
     return creditos;
   }
 
+     /* ***************************************************************
+* Metodo: adicionarLivros
+* Funcao: adicionar um livro a lista de livros de um Aluno com as regras de negocio
+* Parametros: Livro a ser adicionado
+* Retorno: boolean(retorna true se for adicionado e false se nao for)
+*************************************************************** */
   @Override
   public boolean adicionarLivro(Livro livro) {
     int creditosAposEmprestimo = creditos - livro.getValorCredito(); // verifica os creditos no possivel emprestimo
@@ -42,6 +48,12 @@ public class Aluno extends Usuario {
     
 }
 
+ /* ***************************************************************
+* Metodo: removerLivros
+* Funcao: remover um livro da lista de livros de um Aluno com as regras de negocio
+* Parametros: Livro a ser rmeovido
+* Retorno: void
+*************************************************************** */
  @Override 
  public void removerLivro(Livro livro){
   int creditosAntesDoEmprestimo = creditos;

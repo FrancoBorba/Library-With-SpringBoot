@@ -1,3 +1,10 @@
+/* ***************************************************************
+* Autor............: Franco Ribeiro Borba
+* Inicio...........: 30/05/2025
+* Ultima alteracao.: 30/05/2025
+* Nome.............: EmprestarLivroUseCase
+* Funcao...........: Emprestar um livro para um usuario com todas as regras de negocio
+*************************************************************** */
 package com.francoborba.biblioteca.usecases.emprestar;
 
 
@@ -17,6 +24,14 @@ public class EmprestarLivroUseCase {
     this.livroRepository = livroRepository;
     this.usuarioRepository = usuarioRepository;  
   }
+
+  
+ /* ***************************************************************
+* Metodo: emprestar
+* Funcao: emprestar um livro da biblioteca com todas as regras de negocio e validacao
+* Parametros: id do usuario que vai pegar o livro e id do livro a ser pego
+* Retorno: void
+*************************************************************** */
    public void emprestar(int idUsuario, int idLivro) {
         //  Buscar o usuario e o livro
         Usuario usuario = usuarioRepository.buscarPorId(idUsuario);
@@ -67,7 +82,6 @@ public class EmprestarLivroUseCase {
         usuarioRepository.salvar(usuario); // ou atualizar(usuario)
         livroRepository.salvar(livro); // ou atualizar(livro)
 
-     
     }
 
 }
