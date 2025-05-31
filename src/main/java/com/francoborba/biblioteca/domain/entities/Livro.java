@@ -9,6 +9,9 @@ package com.francoborba.biblioteca.domain.entities;
 
 public class Livro {
   private int id;
+ 
+
+
   private String titulo;
   private int valorCredito;
   private Boolean disponivel;
@@ -16,8 +19,7 @@ public class Livro {
 
 
 
-  public Livro(int id, String titulo, int valorCredito, Boolean disponivel, Usuario emprestadoPara) {
-    this.id = id;
+  public Livro( String titulo, int valorCredito, Boolean disponivel, Usuario emprestadoPara) {
     this.titulo = titulo;
     this.valorCredito = valorCredito;
     this.disponivel = disponivel;
@@ -32,7 +34,18 @@ public class Livro {
 *************************************************************** */
   public int getId() {
     return id;
+  } 
+  
+   /* ***************************************************************
+* Metodo: setId
+* Funcao: definir  o ID do livro
+* Parametros: int
+* Retorno: void
+*************************************************************** */
+  public void setId(int id) {
+    this.id = id;
   }
+
 
  /* ***************************************************************
 * Metodo: getTitulo

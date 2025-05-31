@@ -15,11 +15,11 @@ import java.util.Map;
 import com.francoborba.biblioteca.domain.entities.Livro;
 import com.francoborba.biblioteca.domain.repository.LivroRepository;
 
-public class RepositoryEmMemoria implements LivroRepository{
+public class LivroRepositoryEmMemoria implements LivroRepository{
 
   // hash map com chave o id e valor o livro
   private final Map<Integer, Livro> livros = new HashMap<>();
-  private int proximoId = 0; // contador de ID para o livro
+  private int proximoId = 1; // contador de ID para o livro
 
   @Override
   public Livro buscarPorId(int id) {
@@ -28,6 +28,7 @@ public class RepositoryEmMemoria implements LivroRepository{
 
   @Override
   public void salvar(Livro livro) {
+    livro.setId(proximoId);
     livros.put(proximoId++, livro);
   }
 
