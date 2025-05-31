@@ -17,8 +17,7 @@ public abstract class Usuario {
   private ArrayList<Livro> livrosEmprestados;
   
 
-  public Usuario(int id, String nome) {
-    this.id = id;
+  public Usuario( String nome) {
     this.nome = nome;
     livrosEmprestados = new ArrayList<>();
   }
@@ -33,6 +32,17 @@ public abstract class Usuario {
   public int getId() {
     return id;
   }
+
+   /* ***************************************************************
+* Metodo: setId
+* Funcao: definir  o ID do Usuario
+* Parametros: int
+* Retorno: void
+*************************************************************** */
+  public void setId(int id) {
+    this.id = id;
+  }
+
 
    /* ***************************************************************
 * Metodo: getNome
@@ -75,6 +85,12 @@ public boolean adicionarLivro(Livro livro) {
 *************************************************************** */
 public void removerLivro(Livro livro) {
     this.livrosEmprestados.remove(livro);
+}
+
+
+@Override
+public String toString() {
+  return "Usuario [nome=" + nome + "]";
 }
 
   

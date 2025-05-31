@@ -12,8 +12,8 @@ public class Aluno extends Usuario {
   private int creditos;
 
 
-  public Aluno(int id, String nome, int creditos) {
-    super(id, nome);
+  public Aluno( String nome, int creditos) {
+    super( nome);
     this.creditos = creditos;
   }
 

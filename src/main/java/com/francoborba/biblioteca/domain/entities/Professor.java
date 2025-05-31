@@ -9,8 +9,8 @@ package com.francoborba.biblioteca.domain.entities;
 
 public class Professor extends Usuario {
 
-  public Professor(int id, String nome) {
-    super(id, nome);
+  public Professor( String nome) {
+    super(nome);
 
   }
 

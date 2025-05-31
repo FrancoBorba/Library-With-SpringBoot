@@ -118,5 +118,10 @@ public class Livro {
     this.disponivel = true;
   }
 
+  @Override
+  public String toString() {
+    return "Livro [titulo=" + titulo + ", valorCredito=" + valorCredito + "]";
+  }
+
 
 }

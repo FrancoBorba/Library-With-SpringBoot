@@ -78,9 +78,6 @@ public class EmprestarLivroUseCase {
         livro.emprestarPara(usuario); // deixa o livro como indisponivel e vincula ao usuario
 
 
-        // Atualizar os dados nos repositorios
-        usuarioRepository.salvar(usuario); // ou atualizar(usuario)
-        livroRepository.salvar(livro); // ou atualizar(livro)
 
     }
 

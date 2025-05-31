@@ -56,14 +56,6 @@ public class DevolverLivroUseCase {
    // listar todos os livros disponiveis depois da devolucao
     System.out.println("Livros disponiveis depois da devolução: " + livroRepository.listarDisponiveis());
 
-        // Atualizar os dados nos repositorios
-        usuarioRepository.salvar(usuario); // ou atualizar(usuario)
-        livroRepository.salvar(livro); // ou atualizar(livro)
-
-
-
-
-
   }
 
 
